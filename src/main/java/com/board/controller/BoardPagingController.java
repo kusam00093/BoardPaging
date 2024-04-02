@@ -44,7 +44,7 @@ public class BoardPagingController {
 		 // 조건에 해당하는 데이터가 없는 경우, 응답 데이터에 비어있는 리스트와 null을 담아 반환
 		// 응답 데이터에 비어있는 리스트와null을 담아 반환
 		// count: 현재 Menu_id의 데이터가 자료수를 알려준다 - 페이지 번호 출력하기 위해
-		// title과 writer는 검색기능에 필요
+		// title과 writer는 검색기능에 필요하다
         int count = boardPagingMapper.count( boardPagingVo );
         PagingResponse<BoardPagingVo> response = null;
         if (count < 1) {
@@ -68,10 +68,10 @@ public class BoardPagingController {
         List<BoardPagingVo> list = boardPagingMapper.getBoardPagingList(
         		menu_id, title, writer, offset, pageSize);
         response =  new PagingResponse<>(list, pagination);
-		
+		 
 		System.out.println( response );
 				
-		ModelAndView  mv         =  new ModelAndView();
+		ModelAndView  mv         =  new ModelAndView(); 
 		mv.addObject("menu_id",    menu_id );
 		mv.addObject("menuList",   menuList );
 		mv.addObject("response",   response );

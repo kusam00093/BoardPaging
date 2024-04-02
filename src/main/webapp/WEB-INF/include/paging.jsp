@@ -13,7 +13,7 @@
        <td width="500" height="25"  align="center" >
      
      <!-- 처음/ 이전 -->     
-     <c:if test="${ startnum gt 1 }">
+     <c:if test="${ startnum gt 1 }"> 
        <a href="/BoardPaging/List?menu_id=${ menu_id }&nowpage=1">⏮</a>
        <a href="/BoardPaging/List?menu_id=${ menu_id }&nowpage=${ startnum - 1 }">
        ⏪
@@ -23,7 +23,7 @@
      <!-- 1 2 3 4 5 6 [7] 8 9 10  -->
      <c:forEach  var="pagenum"  begin="${startnum}"  end="${endnum}"  step="1">
         <a href="/BoardPaging/List?menu_id=${ menu_id }&nowpage=${ pagenum }">
-        ${ pagenum }
+        ${ pagenum } 
         </a>&nbsp;&nbsp;     
      </c:forEach>    
      
