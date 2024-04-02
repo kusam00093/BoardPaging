@@ -53,6 +53,7 @@ public class BoardPagingController {
 
         SearchVo    searchVo   =  new SearchVo();
         searchVo.setPage(nowpage);
+        searchVo.setPageSize(20);      //기본값10개 -> 20개
         
         // Pagination 객체를 생성해서 페이지 정보 계산 후 SearchDto 타입의 객체인 params에 계산된 페이지 정보 저장
         Pagination pagination = new Pagination(count, searchVo);
@@ -72,11 +73,12 @@ public class BoardPagingController {
 		System.out.println( response );
 				
 		ModelAndView  mv         =  new ModelAndView(); 
-		mv.addObject("menu_id",    menu_id );
-		mv.addObject("menuList",   menuList );
-		mv.addObject("response",   response );
-		mv.addObject("searchVo",   searchVo );
-		mv.addObject("nowpage",   nowpage );
+		mv.addObject("menuList",   menuList );    //pagingmenus.jsp
+		mv.addObject("nowpage",   nowpage );      //pagingmenus.jsp,list.jsp
+
+		mv.addObject("menu_id",    menu_id );     // list.jsp
+		mv.addObject("response",   response );    // list.jsp
+		mv.addObject("searchVo",   searchVo );    // list.jsp
 		mv.setViewName("boardpaging/list");
 		return   mv;
 		

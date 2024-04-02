@@ -7,7 +7,7 @@ import lombok.ToString;
 @ToString
 public class Pagination {
 
-    private int totalRecordCount;     // 전체 데이터 수           :Menu_id에 해당하는
+    private int totalRecordCount;     // 전체 데이터 수           :Menu_id에 해당하는 + 
     private int totalPageCount;       // 전체 페이지 수
     private int startPage;            // 첫 페이지 번호
     private int endPage;              // 끝 페이지 번호
